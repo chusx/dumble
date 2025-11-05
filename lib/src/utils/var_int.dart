@@ -53,7 +53,7 @@ extension VarIntExtension on ByteData {
       this.setUint8(index, _target32);
       this.setUint32(index + 1, value);
       lengthInBytes = 5;
-    } else if (value <= 0x8000000000000000) {
+    } else if (value < 0x8000000000000000) {
       this.setUint8(index, _target64);
       this.setUint64(index + 1, value);
       lengthInBytes = 9;
